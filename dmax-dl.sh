@@ -15,8 +15,8 @@ do
 
 		THIS_TITLE=`grep -m 1 -oP '<meta property="og:title" content="\K.*?"' episode.html | head -1 | cut -d '"' -f1`
 		THIS_TITLE="${THIS_TITLE/.F/E}"
-		THIS_TITLE="${THIS_TITLE/:/ -}"
-		THIS_TITLE="${THIS_TITLE/&#x27;/ }"
+		THIS_TITLE="${THIS_TITLE/:/ -}"    # removes last emptyspace
+		THIS_TITLE="${THIS_TITLE/&#x27;/}" # removes "'"-chars
 
 		THIS_SERIES=`echo ${THIS_TITLE} | cut -d '-' -f1`
 		THIS_SERIES=${THIS_SERIES::-1}
