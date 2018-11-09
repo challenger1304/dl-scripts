@@ -9,7 +9,7 @@ do
 		echo $episode > episode.url
 		wget -q $episode -O episode.html
 
-		DLFOLDER="/mnt/DataVault/PlexMedia/tv-series"
+		DLFOLDER="~/Downloads"
 
 		NEXT_URL=`grep -m 1 -oP '<h3 class="vertical-list-item__title"><a href="\K(.*?)"' episode.html | head -1 | cut -d '"' -f1`
 
