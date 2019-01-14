@@ -33,14 +33,13 @@ do
 		echo "$DLFOLDER/$THIS_SERIES/$THIS_SEASON/$THIS_TITLE.mp4"
 		mv "$THIS_TITLE.mp4" "$DLFOLDER/$THIS_SERIES/$THIS_SEASON/$THIS_TITLE.mp4"
 
-		if [ "${1}" = "--all" ] || [ "${1}" = "-a" ] ; then
-			if  [ $NEXT_URL  ] ; then
-				echo "===NEXT=EPISODE==="
-				${0} --all "https://www.dmax.de$NEXT_URL"
-			else
-				echo "=================="
-				echo "Downloads finished"
-			fi
-		fi
+		case "${1}" in
+		"-a" | "--all")
+			echo "===NEXT=EPISODE==="
+			${0} --all "https://www.dmax.de$NEXT_URL";;
+		esac
+
+		echo "=================="
+		echo "Downloads finished"
 	fi
 done
