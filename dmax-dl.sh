@@ -35,8 +35,10 @@ do
 
 		if [ "${1}" = "--all" ] || [ "${1}" = "-a" ] ; then
 			if  [ $NEXT_URL  ] ; then
+				echo "===NEXT=EPISODE==="
 				${0} --all "https://www.dmax.de$NEXT_URL"
 			else
+				echo "=================="
 				echo "Downloads finished"
 			fi
 		fi
