@@ -35,7 +35,7 @@ case "${1}" in
 	thisSeason=$(printf "%02d" $thisSeason)
 	thisEpisode=`curl -s "$urlPref$uri" | grep -m 1 -oP 'Staffel \d{1,} - Folge \K\d{1,}'`
 	thisEpisode=$(printf "%02d" $thisEpisode)
-	thisSeries=`curl -s "$urlPref$uri" | grep -m 1 -oP "data-title='\KTeenage Robot(?=')"`
+	thisSeries=`curl -s "$urlPref$uri" | grep -m 1 -oP "<p class='title'>\K.{1,}(?=</p>)"`
 	thisTitle="$thisSeries - S${thisSeason}E${thisEpisode}.flv"
 	echo "Title: $thisTitle"
 	echo "Series: $thisSeries"
