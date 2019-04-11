@@ -14,6 +14,7 @@ case "${1}" in
 "-a" | "--all")
 	curl -s "$urlPref${2}" | grep -oP "$regex" | while read -r line ; do
 		${0} $line
+		echo "---------------"
 	done
 	echo ===SERIES=COMPLETED===
 	;;
@@ -36,7 +37,6 @@ case "${1}" in
 	thisEpisode=$(printf "%02d" $thisEpisode)
 	thisSeries=`curl -s "$urlPref$uri" | grep -m 1 -oP "data-title='\KTeenage Robot(?=')"`
 	thisTitle="$thisSeries - S${thisSeason}E${thisEpisode}.flv"
-
 	echo "Title: $thisTitle"
 	echo "Series: $thisSeries"
 	echo "Episode: S${thisSeason}E${thisEpisode}"
