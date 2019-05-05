@@ -3,11 +3,11 @@
 
 ###CONFIGURATION
 URLPREF="https://www.dmax.de"
-DLFOLDER="$HOME/Documents"
+DLFOLDER="$HOME/Downloads"
 
-mkdir -p ~/.darlor/dmax-dl
-cp ${0} ~/.darlor/dmax-dl/ 2>/dev/null
-cd ~/.darlor/dmax-dl
+mkdir -p ~/.config/darlor/dmax-dl
+cp ${0} ~/.config/darlor/dmax-dl/ 2>/dev/null
+cd ~/.config/darlor/dmax-dl
 
 case "${1}" in
 "-a" | "--all")

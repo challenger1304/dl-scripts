@@ -6,9 +6,9 @@ urlPref="http://www.nick.de/shows/"
 dlFolder="$HOME/Downloads"
 regex="<a href='\K(http:\/\/www\.nick\.de\/shows\/.{1,}\/videos\/.{1,})(?='>)"
 
-mkdir -p ~/.darlor/nick-dl
-cp ${0} ~/.darlor/nick-dl/ 2>/dev/null
-cd ~/.darlor/nick-dl
+mkdir -p ~/.config/darlor/nick-dl
+cp ${0} ~/.config/darlor/nick-dl/ 2>/dev/null
+cd ~/.config/darlor/nick-dl
 
 case "${1}" in
 "-a" | "--all")
